@@ -5,28 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/${fileBasename}",
             "request": "launch",
-            "name": "Launch Lec2.js",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/lec2.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+            "type": "node"
         },
-        {
-            "name": "Launch current file",
-            "type": "node",
-            "request": "launch",
-            "program": "${file}",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
-        }
     ]
 }
