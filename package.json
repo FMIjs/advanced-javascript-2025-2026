@@ -1,0 +1,26 @@
+{
+  "name": "fmijs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FMIjs/advanced-javascript-2025-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FMIjs/advanced-javascript-2025-2026/issues"
+  },
+  "homepage": "https://github.com/FMIjs/advanced-javascript-2025-2026#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tslab": "^1.0.22",
+    "typescript": "^5.9.3"
+  }
+}
