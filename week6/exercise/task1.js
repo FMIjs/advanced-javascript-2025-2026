@@ -60,3 +60,38 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => console.log(`server is listening on ${port}`));
+
+
+/**
+ * Non-RESTful API endpoints
+ * POST createUser
+ * POST getUser
+ * POST getAllUsers
+ * POST filterUsers
+ * POST updateUser
+ * POST deleteUser
+ * 
+ * RESTful API endpoints
+ * GET    /users?page=1&limit=10&sort=asc&search=abc
+ * GET    /users/:id
+ * POST   /users
+ * PUT    /users/:id
+ * PATCH  /users/:id
+ * DELETE /users
+ * 
+ * `/users` router
+ * GET    /
+ * GET    /:id
+ * POST   /
+ * PUT    /:id
+ * PATCH  /:id
+ * DELETE /
+ * 
+ * `/posts` router
+ * GET    /
+ * GET    /:id
+ * POST   /
+ * PUT    /:id
+ * PATCH  /:id
+ * DELETE /
+ */
