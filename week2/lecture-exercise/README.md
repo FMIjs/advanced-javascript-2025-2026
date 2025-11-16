@@ -25,7 +25,7 @@ console.log(memSum(2, 3)); // директно връща 5 без да смят
    cTrippleAdd = curry(trippleAdd);
 
    cTrippleAdd(1); // no calc
-   cTrippleAdd(1, 2); // no calc
+   cTrippleAdd(1, 2); // calc -> 4
    cTrippleAdd(1, 2, 3); // calc
    cTrippleAdd(1)(2)(3); // => calc
    const a = cTrippleAdd(1); // =>  no calc
