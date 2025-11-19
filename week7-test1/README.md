@@ -30,7 +30,7 @@ function RequestLogger(options) {
 - Записва информация за request
 - `requestData` съдържа: `{ method, url, timestamp, ip }`
 - Ако броят logs надхвърли `maxLogs`, премахва най-стария log
-- Връща `Promise` който се resolve с log entry
+- Връща `Promise` с данните, които са логнати (виж `request-logger.js`, ред 16.)
 
 #### `.getLogs(filter)`
 - Връща масив от logs
