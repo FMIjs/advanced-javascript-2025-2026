@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve -l 31337"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "ts-node": "^10.9.2",
     "tslab": "^1.0.22",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "serve": "^14.2.5"
   }
 }

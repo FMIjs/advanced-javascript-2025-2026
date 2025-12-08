@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9: Browser JavaScript Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .exercises {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .exercise-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exercise-card:hover {
+            border-color: #2196F3;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .exercise-card h2 {
+            margin: 0 0 15px 0;
+            color: #2196F3;
+            font-size: 20px;
+        }
+
+        .exercise-card p {
+            color: #666;
+            margin: 0 0 10px 0;
+            flex-grow: 1;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .concepts {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .concepts strong {
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background 0.2s;
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: #1976D2;
+        }
+
+        .other-files {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .other-files h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .other-files a {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .other-files a:hover {
+            background: #45a049;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            color: #1565c0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Week 9: JavaScript in the Browser</h1>
+        <p class="subtitle">Practical exercises for browser APIs and interactive web applications</p>
+
+        <div class="info-box">
+            <strong>💡 Tip:</strong> Run <code>npm run serve</code> to start the development server on localhost:31337, then click the links below to run each exercise.
+        </div>
+
+        <div class="exercises">
+            <a href="task1-todo-app.html" class="exercise-card">
+                <h2>Task 1: Todo App</h2>
+                <p>Build a complete todo list application with persistent storage.</p>
+                <div class="concepts">
+                    <strong>Covers:</strong> DOM manipulation, localStorage, events, event delegation
+                </div>
+                <span class="btn">Open →</span>
+            </a>
+
+            <a href="task2-api-dashboard.html" class="exercise-card">
+                <h2>Task 2: API Dashboard</h2>
+                <p>Fetch and display data from a public API with proper error handling.</p>
+                <div class="concepts">
+                    <strong>Covers:</strong> Fetch API, async/await, error handling, event delegation
+                </div>
+                <span class="btn">Open →</span>
+            </a>
+
+            <a href="task3-lazy-loading.html" class="exercise-card">
+                <h2>Task 3: Image Gallery</h2>
+                <p>Lazy-load images with Intersection Observer for optimal performance.</p>
+                <div class="concepts">
+                    <strong>Covers:</strong> Intersection Observer, lazy loading, infinite scroll, performance
+                </div>
+                <span class="btn">Open →</span>
+            </a>
+        </div>
+
+        <div class="other-files">
+            <h3>📚 Additional Resources</h3>
+            <a href="interactive.html">Interactive Browser API Demo</a>
+            <p style="margin: 15px 0 0 0; color: #666; font-size: 14px;">
+                Explore various browser APIs with runnable examples and DOM manipulation demos.
+            </p>
+        </div>
+
+        <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin-top: 30px; border-radius: 4px; color: #e65100; font-size: 14px; line-height: 1.6;">
+            <strong>📖 Learning Outcomes:</strong> After completing these exercises, you'll understand DOM manipulation, event handling, async patterns, browser storage, and performance optimization techniques essential for modern web development.
+        </div>
+    </div>
+</body>
+</html>
