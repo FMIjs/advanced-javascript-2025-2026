@@ -1,48 +1,79 @@
 const express = require("express");
-const { BadWords, censorText } = require("./censor");
 
 const app = express();
+app.use(express.json())
 
 /**
- * Reference solution for the debugging warm-up + /censor requirement.
+ * Debugging warm-up:
+ * Task: fix each route so it ALWAYS completes a response.
  */
 
-app.use(express.json());
 
 app.get("/health", async (req, res) => {
-  // simulate a dependency check with a tiny delay (but it DOES resolve)
-  await new Promise((resolve) => setTimeout(resolve, 50));
-  return res.send("ok");
+  console.log("health check requested");
+  console.log("checking dependencies...");
+  const mimicRandomDelay = Math.floor(1000 + Math.random() * 4000);
+
+  await new Promise((res,rej) => {
+    setTimeout(() => {
+        res();
+    }, mimicRandomDelay);
+  });
+
+  res.send("ok");
 });
 
 app.get("/api/time", (req, res) => {
   const now = new Date().toISOString();
-  return res.json({ now });
+  console.log("time:", now);
+    res.send(now);
 });
 
 app.get("/api/echo", (req, res) => {
   const msg = req.query.msg || "hello";
-  return res.send(String(msg));
+  console.log("echo:", msg);
+
+  res.send(String(msg));
 });
 
-app.post("/api/censor", (req, res) => {
-  const { text } = req.body || {};
-  if (typeof text !== "string") {
-    return res.status(400).json({ error: 'Body must be JSON with field "text": string' });
+
+const forbiddenList = {
+  bad: "***",
+  worse: "****",
+  horrible: "*****",
+};
+
+class WordFilter {
+  constructor(source) {
+      this.source = source;
   }
 
-  const badWords = new BadWords(["foo", "bar", "baz"]);
-  const censored = censorText(text, badWords);
-  return res.json({ censored });
+  *[Symbol.iterator]() {
+      const keys = Object.keys(this.source);
+      for (const k of keys) {
+          yield { word: k, replacement: this.source[k] };
+      }
+  }
+}
+const filterIterator = new WordFilter(forbiddenList);
+
+app.post('/censor', (req, res) => {
+  let inputStr = req.body.item;
+
+  if (typeof inputStr !== 'string' || !inputStr) {
+      return res.status(201).json({ error: 'Text is required' });
+  }
+
+  for (const item of filterIterator) {
+      const regex = new RegExp(item.word); 
+      inputStr = inputStr.replace(regex, item.replacement);
+  }
+
+  res.json({ censored: inputStr });
 });
 
-// 404 handler - must be after all other routes
-app.use((req, res) => {
-  return res.status(404).json({ error: "Not Found" });
-});
 
 app.listen(3000, () => {
-  console.log("Listening on http://localhost:3000");
+  console.log("Listening on http://loclahost:3000");
   console.log("Try: curl -i http://localhost:3000/health");
 });
-
